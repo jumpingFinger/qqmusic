@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet/less" href="css/qq-music.less">
+    <script src="utils/less-2.5.3.min.js"></script>
+    <script src="utils/prefixfree.min.js"></script>
+    <script>
+        ~function anonymous(window) {
+            let computedREM=function (){
+                let winW=document.documentElement.clientWidth,
+                    desw=640;
+                if(winW>desw){
+                    document.documentElement.style.fontSize='100px';
+                    return;
+                }
+                document.documentElement.style.fontSize=(winW/desw*100)+'px';
+            };
+            computedREM();
+            window.addEventListener('resize',computedREM);
+        }(window);
+    </script>
+</head>
+<body>
+<main class="mainBox">
+    <!--背景图片:一个背景图片 一个遮罩层-->
+    <img src="img/myDream.jpg" alt="" class="backgroundImg">
+    <div class="backgroundMark"></div>
+    <!--进入网页播放的音乐-->
+    <audio src="img/myDream.m4a" preload="metadata" id="musicAudio"></audio>
+
+    <!--header-->
+    <header class="headerBox">
+        <img src="img/myDream.jpg" alt="" class="pic">
+        <div class="title">
+            <h1>我的梦-my-dream</h1>
+            <h2>张倩颖</h2>
+            <a href="javascript:;" class="playBtn"></a>
+        </div>
+    </header>
+    <!--content-->
+    <section class="contentBox">
+        <div class="wrapper">
+            <!--<p>fsafas</p>-->
+        </div>
+    </section>
+    <!--footer-->
+    <footer class="footerBox">
+        <div class="progressBox">
+            <span class="already">00:00</span>
+            <div class="progress">
+                <div class="current"></div>
+            </div>
+            <span class="duration">00:00</span>
+        </div>
+        <a href="javascript:;" class="icon">下载这首音乐</a>
+    </footer>
+</main>
+</body>
+</html>
+<script src="utils/zepto.min.js"></script>
+<script src="js/qq-music.js"></script>
